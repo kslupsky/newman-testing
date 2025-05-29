@@ -7,7 +7,7 @@
     },
     "item": [
       {
-        "id": "f23065a9-7290-449e-b10a-d685480c6083",
+        "id": "ec9f074c-0608-43fe-b568-3d0b8c9e25f5",
         "name": "Create Booking",
         "request": {
           "url": {
@@ -40,7 +40,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "ac08c4af-7823-4557-bddd-c886bbb00a39",
+              "id": "2627c4c4-e5e8-4207-ba2b-42ace6011626",
               "type": "text/javascript",
               "packages": {},
               "exec": [
@@ -49,13 +49,13 @@
                 "});\r",
                 ""
               ],
-              "_lastExecutionId": "148f62cf-288c-4482-9e06-69887e4b84aa"
+              "_lastExecutionId": "205fd347-988a-48d4-85c1-5cf46626cb4e"
             }
           }
         ]
       },
       {
-        "id": "a5fc932a-c066-467c-985a-561f2c01201c",
+        "id": "5593721d-722f-49ee-9d20-d5c998345329",
         "name": "View Booking",
         "request": {
           "url": {
@@ -80,7 +80,7 @@
           {
             "listen": "test",
             "script": {
-              "id": "382f6ee4-7661-4e97-82a8-d04878083581",
+              "id": "54e393f4-02c7-408b-9245-0cc9277b7588",
               "type": "text/javascript",
               "packages": {},
               "exec": [
@@ -88,11 +88,11 @@
                 "    pm.response.to.have.status(200);\r",
                 "});\r",
                 "\r",
-                "// pm.test(\"Failing test\", function () {\r",
-                "//     pm.expect(true).to.be.false; // This will fail the test\r",
-                "// });"
+                "pm.test(\"Failing test\", function () {\r",
+                "    pm.expect(true).to.be.false; // This will fail the test\r",
+                "});"
               ],
-              "_lastExecutionId": "37de5727-e0a4-4c36-a4eb-f6c716b14b2b"
+              "_lastExecutionId": "f166b947-a826-4796-93de-2d606358ef2a"
             }
           }
         ]
@@ -123,7 +123,7 @@
     ]
   },
   "globals": {
-    "id": "a90dfe02-02e0-4918-a380-41c1508ea384",
+    "id": "67b9f193-2b4c-4f8d-9523-6fc4ff1e8c1c",
     "values": []
   },
   "run": {
@@ -159,9 +159,9 @@
         "failed": 0
       },
       "assertions": {
-        "total": 2,
+        "total": 3,
         "pending": 0,
-        "failed": 0
+        "failed": 1
       },
       "testScripts": {
         "total": 2,
@@ -175,10 +175,10 @@
       }
     },
     "timings": {
-      "responseAverage": 175.5,
-      "responseMin": 48,
-      "responseMax": 303,
-      "responseSd": 127.5,
+      "responseAverage": 274,
+      "responseMin": 47,
+      "responseMax": 501,
+      "responseSd": 227,
       "dnsAverage": 0,
       "dnsMin": 0,
       "dnsMax": 0,
@@ -187,8 +187,8 @@
       "firstByteMin": 0,
       "firstByteMax": 0,
       "firstByteSd": 0,
-      "started": 1748537675879,
-      "completed": 1748537676370
+      "started": 1748543115946,
+      "completed": 1748543116726
     },
     "executions": [
       {
@@ -201,11 +201,11 @@
           "eof": false,
           "bof": true,
           "cr": false,
-          "ref": "38b00c6d-38b2-4562-a421-03818a66c068",
-          "httpRequestId": "2fd4d9f6-7711-4f38-954e-76aa93e30c55"
+          "ref": "d70fbc04-46dd-4d68-b463-9e415463bdd3",
+          "httpRequestId": "a8bc375e-d39d-40cb-a9d0-b3c9f8926af3"
         },
         "item": {
-          "id": "f23065a9-7290-449e-b10a-d685480c6083",
+          "id": "ec9f074c-0608-43fe-b568-3d0b8c9e25f5",
           "name": "Create Booking",
           "request": {
             "url": {
@@ -238,7 +238,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "ac08c4af-7823-4557-bddd-c886bbb00a39",
+                "id": "2627c4c4-e5e8-4207-ba2b-42ace6011626",
                 "type": "text/javascript",
                 "packages": {},
                 "exec": [
@@ -247,7 +247,7 @@
                   "});\r",
                   ""
                 ],
-                "_lastExecutionId": "148f62cf-288c-4482-9e06-69887e4b84aa"
+                "_lastExecutionId": "205fd347-988a-48d4-85c1-5cf46626cb4e"
               }
             }
           ]
@@ -289,7 +289,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "f7bf08b3-6d30-48c7-9747-96e6eaedd5de",
+              "value": "7a3fba1b-d8a0-4d34-a25f-32fa79b0a598",
               "system": true
             },
             {
@@ -329,7 +329,7 @@
           }
         },
         "response": {
-          "id": "7c82e25d-aba4-4487-9f18-6a8c318b5164",
+          "id": "a0ce078f-af76-4bb3-bcf9-2da00bb5a043",
           "status": "OK",
           "code": 200,
           "header": [
@@ -343,11 +343,11 @@
             },
             {
               "key": "Date",
-              "value": "Thu, 29 May 2025 16:54:34 GMT"
+              "value": "Thu, 29 May 2025 18:25:14 GMT"
             },
             {
               "key": "Etag",
-              "value": "W/\"c6-f++49iwvnE/Vk3k+RAuTLl81U+g\""
+              "value": "W/\"c6-6Hm8mltAMEuz8n8yKJhi6nQQN7E\""
             },
             {
               "key": "Nel",
@@ -355,11 +355,11 @@
             },
             {
               "key": "Report-To",
-              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=9tfFlxKaXcHMgTnZzruK%2Bi3ROwc26Sg2UDQVgtrtxs8%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748537674\"}],\"max_age\":3600}"
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=SeDSlOXrdB4XQe99O7vx8r%2FxqV1XYFBs2p5CzvtswXo%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748543114\"}],\"max_age\":3600}"
             },
             {
               "key": "Reporting-Endpoints",
-              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=9tfFlxKaXcHMgTnZzruK%2Bi3ROwc26Sg2UDQVgtrtxs8%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1748537674\""
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=SeDSlOXrdB4XQe99O7vx8r%2FxqV1XYFBs2p5CzvtswXo%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1748543114\""
             },
             {
               "key": "Server",
@@ -392,8 +392,8 @@
               58,
               50,
               51,
+              52,
               55,
-              48,
               44,
               34,
               98,
@@ -578,10 +578,10 @@
             ]
           },
           "cookie": [],
-          "responseTime": 303,
+          "responseTime": 501,
           "responseSize": 198
         },
-        "id": "f23065a9-7290-449e-b10a-d685480c6083",
+        "id": "ec9f074c-0608-43fe-b568-3d0b8c9e25f5",
         "assertions": [
           {
             "assertion": "Status code is 200",
@@ -591,15 +591,15 @@
       },
       {
         "cursor": {
-          "ref": "51188102-21bf-4925-93c9-c11b81dd4c06",
+          "ref": "a9c65c1c-c80d-4bc0-ab15-00fb63a31cdd",
           "length": 2,
           "cycles": 1,
           "position": 1,
           "iteration": 0,
-          "httpRequestId": "6c467e71-480e-4b23-90d6-f72adac93164"
+          "httpRequestId": "08d223a7-e877-4fbc-aaab-f11d65000898"
         },
         "item": {
-          "id": "a5fc932a-c066-467c-985a-561f2c01201c",
+          "id": "5593721d-722f-49ee-9d20-d5c998345329",
           "name": "View Booking",
           "request": {
             "url": {
@@ -624,7 +624,7 @@
             {
               "listen": "test",
               "script": {
-                "id": "382f6ee4-7661-4e97-82a8-d04878083581",
+                "id": "54e393f4-02c7-408b-9245-0cc9277b7588",
                 "type": "text/javascript",
                 "packages": {},
                 "exec": [
@@ -632,11 +632,11 @@
                   "    pm.response.to.have.status(200);\r",
                   "});\r",
                   "\r",
-                  "// pm.test(\"Failing test\", function () {\r",
-                  "//     pm.expect(true).to.be.false; // This will fail the test\r",
-                  "// });"
+                  "pm.test(\"Failing test\", function () {\r",
+                  "    pm.expect(true).to.be.false; // This will fail the test\r",
+                  "});"
                 ],
-                "_lastExecutionId": "37de5727-e0a4-4c36-a4eb-f6c716b14b2b"
+                "_lastExecutionId": "f166b947-a826-4796-93de-2d606358ef2a"
               }
             }
           ]
@@ -674,7 +674,7 @@
             },
             {
               "key": "Postman-Token",
-              "value": "021ea803-91cc-4ba4-aaa3-adb60d85cf14",
+              "value": "db59d95d-4e1d-46e5-b166-729ea29fe468",
               "system": true
             },
             {
@@ -700,7 +700,7 @@
           }
         },
         "response": {
-          "id": "b41d16d0-bfdf-442d-a3bf-c6dd8fea27b4",
+          "id": "98ab1f05-0ebc-45df-8f88-694f88c6da20",
           "status": "OK",
           "code": 200,
           "header": [
@@ -714,11 +714,11 @@
             },
             {
               "key": "Date",
-              "value": "Thu, 29 May 2025 16:54:34 GMT"
+              "value": "Thu, 29 May 2025 18:25:15 GMT"
             },
             {
               "key": "Etag",
-              "value": "W/\"a9-Yu0B5od+xnQDU2ZP1ZVW9yMa3ok\""
+              "value": "W/\"a9-pLno4M4jARCCH8k0BsLT0ALMqUE\""
             },
             {
               "key": "Nel",
@@ -726,11 +726,11 @@
             },
             {
               "key": "Report-To",
-              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=9tfFlxKaXcHMgTnZzruK%2Bi3ROwc26Sg2UDQVgtrtxs8%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748537674\"}],\"max_age\":3600}"
+              "value": "{\"group\":\"heroku-nel\",\"endpoints\":[{\"url\":\"https://nel.heroku.com/reports?s=udZkF9zQkYRydA30ptqNcdJEhvuMKHtNJXkqexNMCog%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748543115\"}],\"max_age\":3600}"
             },
             {
               "key": "Reporting-Endpoints",
-              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=9tfFlxKaXcHMgTnZzruK%2Bi3ROwc26Sg2UDQVgtrtxs8%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1748537674\""
+              "value": "heroku-nel=\"https://nel.heroku.com/reports?s=udZkF9zQkYRydA30ptqNcdJEhvuMKHtNJXkqexNMCog%3D&sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&ts=1748543115\""
             },
             {
               "key": "Server",
@@ -763,9 +763,9 @@
               58,
               34,
               74,
-              97,
+              111,
+              104,
               110,
-              101,
               34,
               44,
               34,
@@ -780,11 +780,11 @@
               34,
               58,
               34,
-              66,
-              114,
-              111,
-              119,
-              110,
+              83,
+              109,
+              105,
+              116,
+              104,
               34,
               44,
               34,
@@ -800,9 +800,9 @@
               101,
               34,
               58,
-              54,
-              55,
-              53,
+              49,
+              49,
+              49,
               44,
               34,
               100,
@@ -852,11 +852,11 @@
               34,
               50,
               48,
-              50,
-              53,
+              49,
+              56,
               45,
               48,
-              54,
+              49,
               45,
               48,
               49,
@@ -876,11 +876,11 @@
               34,
               50,
               48,
-              50,
-              53,
+              49,
+              57,
               45,
               48,
-              56,
+              49,
               45,
               48,
               49,
@@ -920,14 +920,25 @@
             ]
           },
           "cookie": [],
-          "responseTime": 48,
+          "responseTime": 47,
           "responseSize": 169
         },
-        "id": "a5fc932a-c066-467c-985a-561f2c01201c",
+        "id": "5593721d-722f-49ee-9d20-d5c998345329",
         "assertions": [
           {
             "assertion": "Status code is 200",
             "skipped": false
+          },
+          {
+            "assertion": "Failing test",
+            "skipped": false,
+            "error": {
+              "name": "AssertionError",
+              "index": 1,
+              "test": "Failing test",
+              "message": "expected true to be false",
+              "stack": "AssertionError: expected true to be false\n   at Object.eval sandbox-script.js:2:2)"
+            }
           }
         ]
       }
@@ -935,7 +946,192 @@
     "transfers": {
       "responseTotal": 367
     },
-    "failures": [],
+    "failures": [
+      {
+        "error": {
+          "name": "AssertionError",
+          "index": 1,
+          "test": "Failing test",
+          "message": "expected true to be false",
+          "stack": "AssertionError: expected true to be false\n   at Object.eval sandbox-script.js:2:2)",
+          "checksum": "120b9d12eec894f1e3666ec03eec7f9c",
+          "id": "4a0f883a-777c-4a48-bae2-0331e13436f4",
+          "timestamp": 1748543116698,
+          "stacktrace": [
+            {
+              "fileName": "sandbox-script.js",
+              "lineNumber": 2,
+              "functionName": "Object.eval",
+              "typeName": "Object",
+              "methodName": "eval",
+              "columnNumber": 2,
+              "native": false
+            }
+          ]
+        },
+        "at": "assertion:1 in test-script",
+        "source": {
+          "id": "5593721d-722f-49ee-9d20-d5c998345329",
+          "name": "View Booking",
+          "request": {
+            "url": {
+              "path": [
+                "booking",
+                "429"
+              ],
+              "host": [
+                "{{base_url}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": {
+              "type": "noauth",
+              "noauth": []
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "id": "54e393f4-02c7-408b-9245-0cc9277b7588",
+                "type": "text/javascript",
+                "packages": {},
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Failing test\", function () {\r",
+                  "    pm.expect(true).to.be.false; // This will fail the test\r",
+                  "});"
+                ],
+                "_lastExecutionId": "f166b947-a826-4796-93de-2d606358ef2a"
+              }
+            }
+          ]
+        },
+        "parent": {
+          "_": {
+            "postman_id": "441f1da1-39bb-420a-aea1-76ad95626910",
+            "exporter_id": "13505953",
+            "collection_link": "https://test-team-4073.postman.co/workspace/API-Testing-Lab~cf67b250-b5fe-43be-9113-8a0f377ad0fd/collection/13505953-441f1da1-39bb-420a-aea1-76ad95626910?action=share&source=collection_link&creator=13505953"
+          },
+          "item": [
+            {
+              "id": "ec9f074c-0608-43fe-b568-3d0b8c9e25f5",
+              "name": "Create Booking",
+              "request": {
+                "url": {
+                  "path": [
+                    "booking"
+                  ],
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstname\" : \"Jane\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 675,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2025-06-01\",\r\n        \"checkout\" : \"2025-08-01\"\r\n    },\r\n    \"additionalneeds\" : \"Breakfast\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "2627c4c4-e5e8-4207-ba2b-42ace6011626",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      ""
+                    ],
+                    "_lastExecutionId": "205fd347-988a-48d4-85c1-5cf46626cb4e"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "5593721d-722f-49ee-9d20-d5c998345329",
+              "name": "View Booking",
+              "request": {
+                "url": {
+                  "path": [
+                    "booking",
+                    "429"
+                  ],
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "GET",
+                "auth": {
+                  "type": "noauth",
+                  "noauth": []
+                }
+              },
+              "response": [],
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "id": "54e393f4-02c7-408b-9245-0cc9277b7588",
+                    "type": "text/javascript",
+                    "packages": {},
+                    "exec": [
+                      "pm.test(\"Status code is 200\", function () {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "});\r",
+                      "\r",
+                      "pm.test(\"Failing test\", function () {\r",
+                      "    pm.expect(true).to.be.false; // This will fail the test\r",
+                      "});"
+                    ],
+                    "_lastExecutionId": "f166b947-a826-4796-93de-2d606358ef2a"
+                  }
+                }
+              ]
+            }
+          ],
+          "event": [],
+          "variable": [],
+          "info": {
+            "_postman_id": "441f1da1-39bb-420a-aea1-76ad95626910",
+            "name": "Day 8 Lab",
+            "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+          }
+        },
+        "cursor": {
+          "ref": "a9c65c1c-c80d-4bc0-ab15-00fb63a31cdd",
+          "length": 2,
+          "cycles": 1,
+          "position": 1,
+          "iteration": 0,
+          "httpRequestId": "08d223a7-e877-4fbc-aaab-f11d65000898",
+          "scriptId": "54e393f4-02c7-408b-9245-0cc9277b7588",
+          "execution": "f166b947-a826-4796-93de-2d606358ef2a"
+        }
+      }
+    ],
     "error": null
   }
 }
