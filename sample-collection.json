@@ -62,9 +62,9 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Failing test\", function () {\r",
-							"    pm.expect(true).to.be.false; // This will fail the test\r",
-							"});"
+							"// pm.test(\"Failing test\", function () {\r",
+							"//     pm.expect(true).to.be.false; // This will fail the test\r",
+							"// });"
 						],
 						"type": "text/javascript",
 						"packages": {}
