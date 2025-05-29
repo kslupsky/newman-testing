@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "91dec907-641d-45cf-99ee-2288400527b5",
-		"name": "Day 5 Lab",
+		"_postman_id": "441f1da1-39bb-420a-aea1-76ad95626910",
+		"name": "Day 8 Lab",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "13505953",
-		"_collection_link": "https://test-team-4073.postman.co/workspace/API-Testing-Lab~cf67b250-b5fe-43be-9113-8a0f377ad0fd/collection/13505953-91dec907-641d-45cf-99ee-2288400527b5?action=share&source=collection_link&creator=13505953"
+		"_collection_link": "https://test-team-4073.postman.co/workspace/API-Testing-Lab~cf67b250-b5fe-43be-9113-8a0f377ad0fd/collection/13505953-441f1da1-39bb-420a-aea1-76ad95626910?action=share&source=collection_link&creator=13505953"
 	},
 	"item": [
 		{
-			"name": "Exercise 1",
+			"name": "Auth Request",
 			"event": [
 				{
 					"listen": "test",
@@ -18,12 +18,11 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response time is within 2000ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Content-Type is application/json\", function () {\r",
-							"    pm.response.to.have.header(\"Content-Type\", \"application/json; charset=utf-8\");\r",
+							"pm.test(\"Response contains token string\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.have.property(\"token\");\r",
+							"    pm.expect(jsonData.token).to.be.a('string');\r",
+							"    pm.environment.set(\"token\", jsonData.token); // Store token in environment variable\r",
 							"});"
 						],
 						"type": "text/javascript",
@@ -32,134 +31,45 @@
 				}
 			],
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
-				"url": {
-					"raw": "{{baseURL}}{{curWeather}}?lat={{lat}}&lon={{lon}}&units={{units}}&appid={{apiKey}}",
-					"host": [
-						"{{baseURL}}{{curWeather}}"
-					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "units",
-							"value": "{{units}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{apiKey}}"
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": {{username}},\r\n    \"password\": {{password}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Exercise 2",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"let jsonData = pm.response.json();\r",
-							"\r",
-							"pm.test(\"Weather is an array\", function () {\r",
-							"    pm.expect(jsonData.weather).to.be.an(\"array\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Main field is a string\", function () {\r",
-							"    pm.expect(jsonData.weather[0].main).to.be.a(\"string\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Temperature is a number\", function () {\r",
-							"    pm.expect(jsonData.main.temp).to.be.a(\"number\");\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
 					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
 				},
-				"method": "GET",
-				"header": [],
 				"url": {
-					"raw": "{{baseURL}}{{curWeather}}?lat={{lat}}&lon={{lon}}&units={{units}}&appid={{apiKey}}",
+					"raw": "{{base_url}}/auth",
 					"host": [
-						"{{baseURL}}{{curWeather}}"
+						"{{base_url}}"
 					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "units",
-							"value": "{{units}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{apiKey}}"
-						}
+					"path": [
+						"auth"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Exercise 3",
+			"name": "GET All Bookings",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"let jsonData = pm.response.json();\r",
-							"\r",
-							"pm.test(\"Response contains the name string\", function () {\r",
-							"    pm.expect(jsonData).to.have.property(\"name\");\r",
-							"    pm.expect(jsonData.name).to.be.a(\"string\");\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Response contains the weather array\", function () {\r",
-							"    pm.expect(jsonData).to.have.property(\"weather\");\r",
-							"    pm.expect(jsonData.weather).to.be.an(\"array\");\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Weather array contains at least one object\", function () {\r",
-							"    pm.expect(jsonData.weather).to.have.lengthOf.at.least(1);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Weather array contains a proper main string\", function () {\r",
-							"    pm.expect(jsonData.weather[0]).to.have.property(\"main\");\r",
-							"    pm.expect(jsonData.weather[0].main).to.be.a(\"string\");\r",
-							"    pm.expect(jsonData.weather[0].main).to.match(/^(Clear|Clouds|Drizzle|Rain|Snow|Thunderstorm|Mist|Smoke|Haze|Dust|Fog|Sand|Ash|Squall|Tornado)$/);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Response contains the main object\", function () {\r",
-							"    pm.expect(jsonData).to.have.property(\"main\");\r",
-							"    pm.expect(jsonData.main).to.be.an(\"object\");\r",
-							"});\r",
-							"\r",
-							"// Temperature range is based on assumption that Celcius is the unit.\r",
-							"pm.test(\"Main object contains a temp number that is between -50 and 50\", function () {\r",
-							"    pm.expect(jsonData.main).to.have.property(\"temp\");\r",
-							"    pm.expect(jsonData.main.temp).to.be.a(\"number\");\r",
-							"    pm.expect(jsonData.main.temp).to.be.within(-50,50);\r",
+							"pm.test(\"Verify response\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData).to.be.an(\"array\");\r",
+							"    pm.expect(jsonData.length).to.be.greaterThan(0); // Assuming at least one booking exists\r",
+							"    pm.expect(jsonData[0]).to.have.property(\"bookingid\");\r",
 							"});"
 						],
 						"type": "text/javascript",
@@ -174,191 +84,30 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}{{curWeather}}?lat={{lat}}&lon={{lon}}&units={{units}}&appid={{apiKey}}",
+					"raw": "{{base_url}}/booking",
 					"host": [
-						"{{baseURL}}{{curWeather}}"
+						"{{base_url}}"
 					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "units",
-							"value": "{{units}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{apiKey}}"
-						}
+					"path": [
+						"booking"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Exercise 4",
+			"name": "GET Specific Booking",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"let weatherArray = pm.response.json().list;\r",
-							"\r",
-							"weatherArray.forEach((item, index) => {\r",
-							"    pm.test(`Weather item ${index + 1} has required properties`, function () {\r",
-							"        pm.expect(item.weather[0]).to.have.property(\"id\");\r",
-							"        pm.expect(item.weather[0]).to.have.property(\"main\");\r",
-							"        pm.expect(item.weather[0]).to.have.property(\"description\");\r",
-							"    });\r",
-							"    console.log(`Weather condition: ${item.weather[0].main} - ${item.weather[0].description}`);\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}{{forecast}}?lat={{lat}}&lon={{lon}}&units={{units}}&appid={{apiKey}}",
-					"host": [
-						"{{baseURL}}{{forecast}}"
-					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "units",
-							"value": "{{units}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{apiKey}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Exercise 5",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"let temp = pm.response.json().main.temp;\r",
-							"\r",
-							"if (temp < 10) {\r",
-							"    console.log(\"Cold Weather\");\r",
-							"} else if (temp > 20) {\r",
-							"    console.log(\"Warm Weather\");\r",
-							"} else {\r",
-							"    console.log(\"Moderate Weather\");\r",
-							"}\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}{{curWeather}}?lat={{lat}}&lon={{lon}}&units={{units}}&appid={{apiKey}}",
-					"host": [
-						"{{baseURL}}{{curWeather}}"
-					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "units",
-							"value": "{{units}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{apiKey}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Exercise 6",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"let jsonData = pm.response.json();\r",
-							"\r",
-							"pm.test(\"Verify temp_min is not greater than temp_max\", function () {\r",
-							"    pm.expect(jsonData.main.temp_min).to.be.at.most(jsonData.main.temp_max);\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"Verify the city name contains at least one vowel\", function () {\r",
-							"    let cityName = jsonData.name.toLowerCase();\r",
-							"    pm.expect(cityName).to.match(/[a,e,i,o,u]/);\r",
-							"});\r",
-							"\r",
-							"// 3. Confirm that API responses return an error message when given an invalid API key\r",
-							"if (pm.response.code === 401) {\r",
-							"    pm.test(\"API returns error for invalid API key\", function () {\r",
-							"        pm.expect(jsonData).to.have.property(\"message\");\r",
-							"        pm.expect(jsonData.message).to.be.a(\"string\").and.not.empty;\r",
-							"    });\r",
-							"} else {\r",
-							"    console.warn(\"Skipping test: Expected 401 Unauthorized but received \" + pm.response.code);\r",
-							"    pm.test.skip(\"Skipping test: Expected 401 Unauthorized but received \" + pm.response.code);\r",
-							"}\r",
-							"\r",
-							"// Alternate version of #3 using pm.sendRequest instead of skipping the test\r",
-							"let reqURL = pm.environment.get(\"baseURL\") + pm.environment.get(\"curWeather\") + \"?lat=\" + pm.environment.get(\"lat\") + \"&lon=\" + pm.environment.get(\"lon\") + \"&appid=\" + pm.environment.get(\"invalidKey\");\r",
-							"pm.sendRequest(reqURL, (err, res) => {\r",
-							"    if (err) {\r",
-							"        console.log(err);\r",
-							"    }\r",
-							"\r",
-							"    pm.test(\"Status code is 401\", function () {\r",
-							"        pm.expect(res).to.have.property('code', 401);\r",
-							"    });\r",
-							"\r",
-							"    pm.test(\"Verify the response contains a message string with the correct text\", function () {\r",
-							"        let jsonData = res.json();\r",
-							"        pm.expect(jsonData).to.have.property(\"message\");\r",
-							"        pm.expect(jsonData.message).to.be.a(\"string\");\r",
-							"        pm.expect(jsonData.message).to.include(\"Invalid API key\");\r",
-							"    });\r",
+							"pm.test(\"Failing test\", function () {\r",
+							"    pm.expect(true).to.be.false; // This will fail the test\r",
 							"});"
 						],
 						"type": "text/javascript",
@@ -373,143 +122,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}{{curWeather}}?lat={{lat}}&lon={{lon}}&units={{units}}&appid={{apiKey}}",
+					"raw": "{{base_url}}/booking/1000",
 					"host": [
-						"{{baseURL}}{{curWeather}}"
+						"{{base_url}}"
 					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "units",
-							"value": "{{units}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{apiKey}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Exercise 6-3",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Status code is 401\", function () {\r",
-							"    pm.response.to.have.status(401);\r",
-							"});\r",
-							"\r",
-							"pm.test(\"Verify the response contains a message string with the correct text\", function () {\r",
-							"    let jsonData = pm.response.json();\r",
-							"    pm.expect(jsonData).to.have.property(\"message\");\r",
-							"    pm.expect(jsonData.message).to.be.a(\"string\");\r",
-							"    pm.expect(jsonData.message).to.include(\"Invalid API key\");\r",
-							"});"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}{{curWeather}}?lat={{lat}}&lon={{lon}}&units={{units}}&appid={{invalidKey}}",
-					"host": [
-						"{{baseURL}}{{curWeather}}"
-					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "units",
-							"value": "{{units}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{invalidKey}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Exercise 7",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"let cityId = pm.response.json().id;\r",
-							"\r",
-							"let reqURL = pm.environment.get(\"baseURL\") + pm.environment.get(\"forecast\") + \"?id=\" + cityId + \"&appid=\" + pm.environment.get(\"apiKey\");\r",
-							"\r",
-							"pm.sendRequest(reqURL, (err, res) => {\r",
-							"    if (err) {\r",
-							"        console.log(err);\r",
-							"    }\r",
-							"\r",
-							"    pm.test(\"Status code is 200\", function () {\r",
-							"        pm.expect(res).to.have.property('code', 200);\r",
-							"    });\r",
-							"\r",
-							"    pm.test(\"Response city id matches saved cityId\", function () {\r",
-							"        pm.expect(res.json().city.id).to.eql(cityId);\r",
-							"    });\r",
-							"});\r",
-							""
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}{{curWeather}}?lat={{lat}}&lon={{lon}}&appid={{apiKey}}",
-					"host": [
-						"{{baseURL}}{{curWeather}}"
-					],
-					"query": [
-						{
-							"key": "lat",
-							"value": "{{lat}}"
-						},
-						{
-							"key": "lon",
-							"value": "{{lon}}"
-						},
-						{
-							"key": "appid",
-							"value": "{{apiKey}}"
-						}
+					"path": [
+						"booking",
+						"1000"
 					]
 				}
 			},

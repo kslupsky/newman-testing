@@ -1,63 +1,27 @@
 {
-	"id": "fe2729c5-df60-4544-a062-ebf44c43777a",
-	"name": "Weather API Testing",
+	"id": "1e2ec72e-1bf7-443c-a56c-90516c4aca07",
+	"name": "Lab 8 Environment",
 	"values": [
 		{
-			"key": "apiKey",
-			"value": "f002f08cf86ea084792b716064fb7adc",
-			"type": "secret",
-			"enabled": true
-		},
-		{
-			"key": "baseURL",
-			"value": "http://api.openweathermap.org",
+			"key": "base_url",
+			"value": "https://restful-booker.herokuapp.com",
 			"type": "default",
 			"enabled": true
 		},
 		{
-			"key": "curWeather",
-			"value": "/data/2.5/weather",
+			"key": "username",
+			"value": "admin",
 			"type": "default",
 			"enabled": true
 		},
 		{
-			"key": "forecast",
-			"value": "/data/2.5/forecast",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "airPollution",
-			"value": "/data/2.5/air_pollution",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "lat",
-			"value": "46.0979",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "lon",
-			"value": "-64.8001",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "units",
-			"value": "metric",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "invalidKey",
-			"value": "abc123",
+			"key": "password",
+			"value": "password123",
 			"type": "default",
 			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2025-05-29T13:57:29.761Z",
+	"_postman_exported_at": "2025-05-29T16:36:05.354Z",
 	"_postman_exported_using": "Postman/11.47.2"
 }
