@@ -7,21 +7,9 @@
 			"value": "https://restful-booker.herokuapp.com",
 			"type": "default",
 			"enabled": true
-		},
-		{
-			"key": "username",
-			"value": "admin",
-			"type": "default",
-			"enabled": true
-		},
-		{
-			"key": "password",
-			"value": "password123",
-			"type": "default",
-			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2025-05-29T16:36:05.354Z",
+	"_postman_exported_at": "2025-05-29T16:53:16.652Z",
 	"_postman_exported_using": "Postman/11.47.2"
 }
